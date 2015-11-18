@@ -19,17 +19,18 @@ namespace FinalProject.Controllers
         //GET: /Exchange/Browse
         public ActionResult Browse(String category) {
             //need category model class to finish this
-            var categoryModel = new Category { };
-            
-            return View(categoryModel);
+           // var categoryModel = new Category { };
+            return View();
+           // return View(categoryModel);
         }
 
         //GET: /Exchange/Details
         public ActionResult Details(int id) {
             //need ticket model to complete this
-            var ticket = new Ticket {Title="Category " + id };
+            //var ticket = new Ticket {Title="Category " + id };
 
-            return View(ticket);
+            //return View(ticket);
+            return View();
         }
     }
 }
