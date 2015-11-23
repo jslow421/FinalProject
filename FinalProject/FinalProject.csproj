@@ -162,6 +162,16 @@
     <Compile Include="Controllers\ExchangeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="DataContexts\ExchangeDb.cs" />
+    <Compile Include="DataContexts\TicketMigrations\201511231916129_InitialCreate.cs" />
+    <Compile Include="DataContexts\TicketMigrations\201511231916129_InitialCreate.Designer.cs">
+      <DependentUpon>201511231916129_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\TicketMigrations\201511231929481_Update.cs" />
+    <Compile Include="DataContexts\TicketMigrations\201511231929481_Update.Designer.cs">
+      <DependentUpon>201511231929481_Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\TicketMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -240,6 +250,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataContexts\TicketMigrations\201511231916129_InitialCreate.resx">
+      <DependentUpon>201511231916129_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\TicketMigrations\201511231929481_Update.resx">
+      <DependentUpon>201511231929481_Update.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
