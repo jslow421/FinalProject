@@ -1,0 +1,30 @@
+﻿@model FinalProject.Models.Category
+
+@{
+    ViewBag.Title = "Browse";
+}
+
+<h2>Browse Tickets</h2>
+
+<table>
+    <thead>
+        <tr>
+            <td>Event</td>
+            <td>Location</td>
+            <td>Date</td>
+            <td>Category</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ticket in Model.tickets)
+        {
+            <tr>
+                <td>@ticket.eventName</td>
+                <td>@ticket.location</td>
+                <td>@ticket.date</td>
+                <td>@ticket.category.name</td>
+                <td>@Html.ActionLink("View", "Details", new {id = ticket.ticketId})</td>
+            </tr>
+        }
+    </tbody>
+</table>

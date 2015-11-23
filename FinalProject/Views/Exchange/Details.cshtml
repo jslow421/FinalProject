@@ -1,0 +1,13 @@
+﻿@model FinalProject.Models.Ticket
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details @Model.eventName</h2>
+
+<form method="POST" id="trade" name="trade">
+    @Html.ActionLink("Trade", "Trade", new { id = @Model.ticketId })
+</form>
+
+

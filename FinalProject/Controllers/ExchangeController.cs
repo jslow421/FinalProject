@@ -33,5 +33,11 @@ namespace FinalProject.Controllers
 
             return View(ticket);
         }
+
+        [HttpPost]
+        public ActionResult Trade(int id)
+        {
+            return View();
+        }
     }
 }
