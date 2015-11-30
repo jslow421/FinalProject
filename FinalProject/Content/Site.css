@@ -22,3 +22,9 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/*Add background image to jumbotron as well as set text to white for readability*/
+.jumbotron{
+    background-image: url(Img/ticket-slider1.jpg);
+    color:white;
+}
