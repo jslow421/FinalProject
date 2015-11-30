@@ -162,6 +162,7 @@
     <Compile Include="Controllers\ExchangeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\TicketManagerController.cs" />
     <Compile Include="DataContexts\ExchangeDb.cs" />
     <Compile Include="DataContexts\TicketMigrations\201511231916129_InitialCreate.cs" />
     <Compile Include="DataContexts\TicketMigrations\201511231916129_InitialCreate.Designer.cs">
@@ -244,6 +245,11 @@
     <Content Include="Views\Exchange\Browse.cshtml" />
     <Content Include="Views\Exchange\Details.cshtml" />
     <Content Include="Views\Exchange\Trade.cshtml" />
+    <Content Include="Views\TicketManager\Create.cshtml" />
+    <Content Include="Views\TicketManager\Delete.cshtml" />
+    <Content Include="Views\TicketManager\Details.cshtml" />
+    <Content Include="Views\TicketManager\Edit.cshtml" />
+    <Content Include="Views\TicketManager\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
