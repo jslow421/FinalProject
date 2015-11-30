@@ -11,7 +11,7 @@ namespace FinalProject.Controllers {
         }
 
         public ActionResult About() {
-            ViewBag.Message = "About the ticket Exchange";
+            ViewBag.Message = "About the Ticket Exchange";
 
             return View();
         }
