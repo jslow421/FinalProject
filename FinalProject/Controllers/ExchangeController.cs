@@ -34,10 +34,19 @@ namespace FinalProject.Controllers
             return View(ticket);
         }
 
-        [HttpPost]
+
         public ActionResult Trade(int id)
         {
-            return View();
+            string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+            var ticket = ticketDb.tickets.Find(id);
+
+            ticket.user = userName;
+
+            ticketDb.SaveChanges();
+
+            var ticketList = ticketDb.tickets.Include("Tickets").Single(t => t.user == userName);
+
+            return View(ticketList);
         }
     }
 }

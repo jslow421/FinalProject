@@ -1,7 +1,15 @@
-﻿
+﻿@model IEnumerable<FinalProject.Models.Ticket>
+
 @{
-    ViewBag.Title = "Trade";
+    ViewBag.Title = "Your Tickets";
 }
 
 <h2>Trade Succeeded</h2>
+
+<ul>
+    @foreach (var t in Model)
+    {
+        <li>@t</li>
+    }
+</ul>
 
