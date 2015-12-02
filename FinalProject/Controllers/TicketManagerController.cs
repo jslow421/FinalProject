@@ -49,6 +49,31 @@ namespace FinalProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        public ActionResult Create(FormCollection form)
+        {
+            Ticket ticket = new Ticket();
+            ticket.eventName = form["eventName"];
+            ticket.location = form["location"];
+            ticket.tradeType = form["tradeType"];
+            ticket.user = User.Identity.Name;
+            ticket.date = Convert.ToDateTime(form["date"]);
+
+            if (ModelState.IsValid)
+            {
+                db.tickets.Add(ticket);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.CategoryID = new SelectList(db.categories, "Categories", "Name", ticket.category);
+            return View(ticket);
+        }
+
+        // POST: TicketManager/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+      /*  [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ticketId,eventName,location,date,tradeType,user")] Ticket ticket)
         {
             if (ModelState.IsValid)
@@ -60,7 +85,7 @@ namespace FinalProject.Controllers
 
             ViewBag.CategoryID = new SelectList(db.categories, "Categories", "Name", ticket.category);
             return View(ticket);
-        }
+        }*/
 
         // GET: TicketManager/Edit/5
         public ActionResult Edit(int? id)

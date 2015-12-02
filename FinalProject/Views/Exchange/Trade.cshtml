@@ -1,4 +1,4 @@
-﻿@model IEnumerable<FinalProject.Models.Ticket>
+﻿
 
 @{
     ViewBag.Title = "Your Tickets";
@@ -6,10 +6,5 @@
 
 <h2>Trade Succeeded</h2>
 
-<ul>
-    @foreach (var t in Model)
-    {
-        <li>@t</li>
-    }
-</ul>
+<h3>@ViewBag.userName</h3>
 

@@ -11,6 +11,7 @@
     <li>Date: @Model.date</li>
     <li>Location: @Model.location</li>
     <li>Trade Type: @Model.tradeType</li>
+    <li>User: @Model.user</li>
 </ul>
 <form method="POST" id="trade" name="trade">
     @Html.ActionLink("Trade", "Trade", new { id = @Model.ticketId},new{ @class = "btn btn-primary" })

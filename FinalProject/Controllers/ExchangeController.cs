@@ -37,16 +37,16 @@ namespace FinalProject.Controllers
 
         public ActionResult Trade(int id)
         {
-            string userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+            string userName = User.Identity.Name;
             var ticket = ticketDb.tickets.Find(id);
 
             ticket.user = userName;
 
             ticketDb.SaveChanges();
+            ViewBag.userName = userName;
 
            // var ticketList = ticketDb.tickets.Include("Tickets").Single(t => t.user == userName);
-            Ticket[] ticketList = { new Ticket(), new Ticket() };
-            return View(ticketList);
+            return View();
         }
     }
 }
