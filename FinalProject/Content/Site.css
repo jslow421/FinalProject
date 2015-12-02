@@ -28,3 +28,7 @@ textarea {
     background-image: url(Img/ticket-slider1.jpg);
     color:white;
 }
+
+ul{
+    list-style-type: none;
+}

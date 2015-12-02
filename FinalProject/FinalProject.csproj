@@ -167,6 +167,11 @@
     <Compile Include="Controllers\TicketManagerController.cs" />
     <Compile Include="DataContexts\ExchangeDb.cs" />
     <Compile Include="DataContexts\IdentityDb.cs" />
+    <Compile Include="DataContexts\IdentityMigrations\201512021855393_InitialCreate.cs" />
+    <Compile Include="DataContexts\IdentityMigrations\201512021855393_InitialCreate.Designer.cs">
+      <DependentUpon>201512021855393_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\IdentityMigrations\Configuration.cs" />
     <Compile Include="DataContexts\TicketMigrations\201511231916129_InitialCreate.cs" />
     <Compile Include="DataContexts\TicketMigrations\201511231916129_InitialCreate.Designer.cs">
       <DependentUpon>201511231916129_InitialCreate.cs</DependentUpon>
@@ -269,6 +274,9 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DataContexts\IdentityMigrations\201512021855393_InitialCreate.resx">
+      <DependentUpon>201512021855393_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\TicketMigrations\201511231916129_InitialCreate.resx">
       <DependentUpon>201511231916129_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>

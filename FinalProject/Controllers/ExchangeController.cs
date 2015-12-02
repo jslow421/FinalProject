@@ -44,8 +44,8 @@ namespace FinalProject.Controllers
 
             ticketDb.SaveChanges();
 
-            var ticketList = ticketDb.tickets.Include("Tickets").Single(t => t.user == userName);
-
+           // var ticketList = ticketDb.tickets.Include("Tickets").Single(t => t.user == userName);
+            Ticket[] ticketList = { new Ticket(), new Ticket() };
             return View(ticketList);
         }
     }

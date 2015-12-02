@@ -6,8 +6,14 @@
 
 <h2>Details @Model.eventName</h2>
 
+<ul>
+    <li>Event: @Model.eventName</li>
+    <li>Date: @Model.date</li>
+    <li>Location: @Model.location</li>
+    <li>Trade Type: @Model.tradeType</li>
+</ul>
 <form method="POST" id="trade" name="trade">
-    @Html.ActionLink("Trade", "Trade", new { id = @Model.ticketId })
+    @Html.ActionLink("Trade", "Trade", new { id = @Model.ticketId},new{ @class = "btn btn-primary" })
 </form>
 
 

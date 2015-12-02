@@ -14,7 +14,8 @@ namespace FinalProject.Controllers
     public class TicketManagerController : Controller
     {
         private ExchangeDb db = new ExchangeDb();
-
+        private string[] tradeTypes = {"In Person", "Mail", "Email"};
+    
         // GET: TicketManager
         public ActionResult Index()
         {
@@ -39,6 +40,7 @@ namespace FinalProject.Controllers
         // GET: TicketManager/Create
         public ActionResult Create()
         {
+            ViewBag.Category = new SelectList(db.categories, "CategoryId", "Name");
             return View();
         }
 
@@ -56,6 +58,7 @@ namespace FinalProject.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.CategoryID = new SelectList(db.categories, "Categories", "Name", ticket.category);
             return View(ticket);
         }
 
@@ -71,6 +74,8 @@ namespace FinalProject.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.tradeTypes = tradeTypes;
+
             return View(ticket);
         }
 

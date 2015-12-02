@@ -6,7 +6,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using FinalProject.Models;
 using FinalProject.DataContexts;
 
-namespace FinalProject
+namespace FinalProject.DataContexts
 {
     public class IdentityDb : IdentityDbContext<ApplicationUser>
     {
