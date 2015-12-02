@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -159,11 +160,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ExchangeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TicketManagerController.cs" />
     <Compile Include="DataContexts\ExchangeDb.cs" />
+    <Compile Include="DataContexts\IdentityDb.cs" />
     <Compile Include="DataContexts\TicketMigrations\201511231916129_InitialCreate.cs" />
     <Compile Include="DataContexts\TicketMigrations\201511231916129_InitialCreate.Designer.cs">
       <DependentUpon>201511231916129_InitialCreate.cs</DependentUpon>
@@ -252,6 +255,8 @@
     <Content Include="Views\TicketManager\Details.cshtml" />
     <Content Include="Views\TicketManager\Edit.cshtml" />
     <Content Include="Views\TicketManager\Index.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\UsersInRole.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

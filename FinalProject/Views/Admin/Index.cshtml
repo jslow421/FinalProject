@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Microsoft.AspNet.Identity.EntityFramework.IdentityRole>
+@{
+    ViewBag.Title = "Admin";
+}
+
+<h2>Ticket Exchange Roles</h2>
+<hr />
+<ol>
+    @foreach (var role in Model)
+    {
+        <li>@Html.ActionLink(role.Name, "UsersInRole", new { name = role.Name })</li>
+    }
+</ol>
