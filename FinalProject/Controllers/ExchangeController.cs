@@ -22,7 +22,7 @@ namespace FinalProject.Controllers
         //GET: /Exchange/Browse
         public ActionResult Browse(string category) {
            
-            var categoryModel = ticketDb.categories.Include("Tickets").Single(c=>c.name== category);
+            var categoryModel = ticketDb.categories.Include("Tickets").Single(c=>c.name == category);
            
             return View(categoryModel);
         }
@@ -34,7 +34,17 @@ namespace FinalProject.Controllers
             return View(ticket);
         }
 
+        //GET: /Trade Details
+        public ActionResult Ticket(int id)
+        {
+            var user = User.Identity.Name;
 
+            var tickets = ticketDb.tickets.Where(t => t.user == user);
+
+            return View(tickets);
+        }
+        //POST: /Trade Approval
+        [HttpPost]
         public ActionResult Trade(int id)
         {
             string userName = User.Identity.Name;

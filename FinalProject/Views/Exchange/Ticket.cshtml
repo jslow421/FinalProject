@@ -1,8 +1,33 @@
-﻿@model FinalProject.Models.Ticket
+﻿@model IEnumerable<FinalProject.Models.Ticket>
 
 @{
-    ViewBag.Title = "Ticket";
+    ViewBag.Title = "Your Tickets";
 }
 
-<h2>Ticket</h2>
+<h2>Trade Options</h2>
+
+<form method="POST" id="trade" name="trade">
+   
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Event Name</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var t in Model)
+            {
+                <tr>
+                    <td>@t.eventName</td>
+                    <td>@t.location</td>
+                    <td>@t.date</td>
+                    <td><input type="submit" id="@t.ticketId" name="@t.ticketId" class="btn btn-success btn-sm" value="Select" /></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>
 

@@ -13,8 +13,8 @@
     <li>Trade Type: @Model.tradeType</li>
     <li>User: @Model.user</li>
 </ul>
-<form method="POST" id="trade" name="trade">
-    @Html.ActionLink("Trade", "Trade", new { id = @Model.ticketId},new{ @class = "btn btn-primary" })
+<form method="GET" id="ticket" name="ticket">
+    @Html.ActionLink("Ticket", "Ticket", new { id = @Model.ticketId},new{ @class = "btn btn-primary" })
 </form>
 
 
