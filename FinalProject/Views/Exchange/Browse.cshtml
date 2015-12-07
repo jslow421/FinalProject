@@ -23,7 +23,7 @@
                 <td>@ticket.location</td>
                 <td>@ticket.date</td>
                 <td>@ticket.category.name</td>
-                <td>@Html.ActionLink("View", "Details", new {id = ticket.ticketId})</td>
+                <td>@Html.ActionLink("View", "Details", new { id = ticket.ticketId }, new { @class = "btn btn-success btn-sm" })</td>
             </tr>
         }
     </tbody>

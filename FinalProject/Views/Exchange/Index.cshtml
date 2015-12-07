@@ -6,9 +6,9 @@
 
 <h2>Categories</h2>
 
-<ul>
+<ul id="linkList">
     @foreach(var cat in Model)
     {
-        <li>@Html.ActionLink(cat.name, "Browse", new {category = cat.name})</li>
+        <li><h5>@Html.ActionLink(cat.name, "Browse", new { category = cat.name })</h5></li>
     }
 </ul>

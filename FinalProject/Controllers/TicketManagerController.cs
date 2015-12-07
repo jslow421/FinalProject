@@ -40,7 +40,10 @@ namespace FinalProject.Controllers
         // GET: TicketManager/Create
         public ActionResult Create()
         {
-            ViewBag.Category = new SelectList(db.categories, "CategoryId", "Name");
+            IEnumerable<SelectListItem> categories = db.categories
+                .Select(category => new SelectListItem { Value = category.name, Text = category.name });
+
+            ViewBag.categories = categories;
             return View();
         }
 
@@ -57,6 +60,9 @@ namespace FinalProject.Controllers
             ticket.tradeType = form["tradeType"];
             ticket.user = User.Identity.Name;
             ticket.date = Convert.ToDateTime(form["date"]);
+            string cat = form["categories"];
+
+            ticket.category = (Category)db.categories.Single(s => s.name == cat);
 
             if (ModelState.IsValid)
             {

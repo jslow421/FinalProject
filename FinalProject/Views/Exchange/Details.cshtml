@@ -4,7 +4,7 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details @Model.eventName</h2>
+<h2>Ticket Details</h2>
 
 <ul>
     <li>Event: @Model.eventName</li>
@@ -14,7 +14,7 @@
     <li>User: @Model.user</li>
 </ul>
 <form method="GET" id="ticket" name="ticket">
-    @Html.ActionLink("Ticket", "Ticket", new { id = @Model.ticketId},new{ @class = "btn btn-primary" })
+    @Html.ActionLink("Trade", "Ticket", new { id = @Model.ticketId},new{ @class = "btn btn-danger" })
 </form>
 
 
