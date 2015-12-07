@@ -5,9 +5,8 @@
 }
 
 <h2>Trade Options</h2>
-
-<form method="POST" id="trade" name="trade">
-   
+<p>Choose a ticket you would like to trade for: @ViewBag.ticket.eventName on @ViewBag.Ticket.date</p>
+<form method="POST" action="/Exchange/Trade/@ViewBag.ticket.ticketId" id="trade" name="trade">
     <table class="table table-striped">
         <thead>
             <tr>
@@ -24,7 +23,8 @@
                     <td>@t.eventName</td>
                     <td>@t.location</td>
                     <td>@t.date</td>
-                    <td><input type="submit" id="@t.ticketId" name="@t.ticketId" class="btn btn-success btn-sm" value="Select" /></td>
+                    <td><button type="submit" id="tradeTicket" name="tradeTicket" class="btn btn-sucess btn-sm" value="@t.ticketId">Select</button>
+                    <input type="submit" id="@t.ticketId" name="@t.ticketId" class="btn btn-success btn-sm" value="Select" /></td>
                 </tr>
             }
         </tbody>

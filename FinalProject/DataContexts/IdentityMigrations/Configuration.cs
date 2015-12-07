@@ -34,7 +34,7 @@ namespace FinalProject.DataContexts.IdentityMigrations
                 var manager = new UserManager<ApplicationUser>(store);
                 var user = new ApplicationUser { UserName = "mvcmanager@gmail.com" };
 
-                manager.Create(user, "test@isp.com");
+                manager.Create(user, "B@nannas");
                 manager.AddToRole(user.Id, "AppAdmin");
             }
 

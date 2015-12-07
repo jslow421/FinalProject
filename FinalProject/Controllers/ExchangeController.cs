@@ -38,25 +38,35 @@ namespace FinalProject.Controllers
         public ActionResult Ticket(int id)
         {
             var user = User.Identity.Name;
+            var ticket = ticketDb.tickets.Find(id);
 
             var tickets = ticketDb.tickets.Where(t => t.user == user);
 
+            ViewBag.ticket = ticket;
             return View(tickets);
         }
+
         //POST: /Trade Approval
         [HttpPost]
-        public ActionResult Trade(int id)
+        public ActionResult Trade(int id, FormCollection form)
         {
             string userName = User.Identity.Name;
             var ticket = ticketDb.tickets.Find(id);
-
+            var tradeId = form["tradeTicket"];
+            var ticket2 = ticketDb.tickets.Find(Convert.ToInt32(tradeId));
+            //trades the tickets
+            ticket2.user = ticket.user;
             ticket.user = userName;
 
             ticketDb.SaveChanges();
-            ViewBag.userName = userName;
 
-           // var ticketList = ticketDb.tickets.Include("Tickets").Single(t => t.user == userName);
-            return View();
+            ViewBag.ticket = ticket;
+            ViewBag.userName = userName;
+            ViewBag.ticket2 = ticket2;
+
+
+            var tickets = ticketDb.tickets.Where(t => t.user == User.Identity.Name);
+            return View(tickets);
         }
     }
 }

@@ -4,9 +4,10 @@
     ViewBag.Title = "Your Tickets";
 }
 
-<h2>Trade Options</h2>
+<h2>Trade Succeeded</h2>
+<p>You traded @ViewBag.ticket2.eventName  for @ViewBag.ticket.eventName</p>
 
-@using (Html.BeginForm()) { 
+<h4>Your Current Tickets Are:</h4>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -22,12 +23,11 @@
             <tr>
                 <td>@t.eventName</td>
                 <td>@t.location</td>
-                <td>@t.date</td>
-                <td><input type="submit" id="@t.ticketId" name="@t.ticketId" class="btn btn-success btn-sm" value="Select"/></td>
+                <td>@t.date</td>             
             </tr>
         }
     </tbody>
 </table>
-}
+
 
 
