@@ -180,6 +180,10 @@
     <Compile Include="DataContexts\TicketMigrations\201511231929481_Update.Designer.cs">
       <DependentUpon>201511231929481_Update.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataContexts\TicketMigrations\201512072028211_Update1.cs" />
+    <Compile Include="DataContexts\TicketMigrations\201512072028211_Update1.Designer.cs">
+      <DependentUpon>201512072028211_Update1.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataContexts\TicketMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -199,6 +203,7 @@
     <Content Include="Content\Img\slider1.jpg" />
     <Content Include="Content\Img\slider2.jpg" />
     <Content Include="Content\Img\ticket-slider1.jpg" />
+    <Content Include="Content\jquery-ui.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -209,6 +214,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -216,6 +222,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\ticket.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -284,6 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\TicketMigrations\201511231929481_Update.resx">
       <DependentUpon>201511231929481_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\TicketMigrations\201512072028211_Update1.resx">
+      <DependentUpon>201512072028211_Update1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

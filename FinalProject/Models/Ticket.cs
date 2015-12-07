@@ -11,6 +11,7 @@ namespace FinalProject.Models
         public string eventName { get; set; }
         public string location { get; set; }
         public DateTime date { get; set; }
+        public DateTime time { get; set; }
         public string tradeType { get; set; }
         public string user { get; set; }
         public Category category { get; set; }

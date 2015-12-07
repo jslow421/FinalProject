@@ -25,12 +25,13 @@ namespace FinalProject.DataContexts.TicketMigrations
                 new Category { name = "Concert" }
             };
 
+            DateTime date = new DateTime();
             context.tickets.AddOrUpdate(
                 t => t.eventName,
-                new Ticket { eventName = "Packer Game", date= DateTime.Now, location = "Lambaeu Field", category = categories.Single(c => c.name == "Football") },
-                new Ticket { eventName = "Admiral Game", date = DateTime.Now, location = "Bradley Center", category = categories.Single(c => c.name == "Hockey") },
-                new Ticket { eventName = "Bucks Game", date = DateTime.Now, location = "Bradley Center", category = categories.Single(c => c.name == "Basketball") },
-                new Ticket { eventName = "Some Singer", date = DateTime.Now, location = "Pabst Theater", category = categories.Single(c => c.name == "Concert") }
+                new Ticket { eventName = "Packer Game", date= DateTime.Now, time = date.AddHours(13).AddMinutes(30), location = "Lambaeu Field", category = categories.Single(c => c.name == "Football") },
+                new Ticket { eventName = "Admiral Game", date = DateTime.Now, time = date.AddHours(19).AddMinutes(10), location = "Bradley Center", category = categories.Single(c => c.name == "Hockey") },
+                new Ticket { eventName = "Bucks Game", date = DateTime.Now, time = date.AddHours(19).AddMinutes(30), location = "Bradley Center", category = categories.Single(c => c.name == "Basketball") },
+                new Ticket { eventName = "Some Singer", date = DateTime.Now, time = date.AddHours(20).AddMinutes(00), location = "Pabst Theater", category = categories.Single(c => c.name == "Concert") }
                 );
 
             context.SaveChanges();

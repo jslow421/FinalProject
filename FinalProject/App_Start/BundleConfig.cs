@@ -20,9 +20,13 @@ namespace FinalProject {
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
+                    "~/Scripts/jquery-ui.min.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/custom-min.css",
+                      "~/Content/jquery-ui.min.css",
                       "~/Content/Site.css"));
         }
     }

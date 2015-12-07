@@ -23,10 +23,16 @@
                     <td>@t.eventName</td>
                     <td>@t.location</td>
                     <td>@t.date</td>
-                    <td><button type="submit" id="tradeTicket" name="tradeTicket" class="btn btn-success btn-sm" value="@t.ticketId">Select</button>
+                    <td>@t.time</td>
+                    <td><button type="button" id="tradeTicket" name="tradeTicket" class="btn btn-success btn-sm" value="@t.ticketId">Select</button>
                 </tr>
             }
         </tbody>
     </table>
 </form>
 
+<div id="dialog" title="Confirm Trade">Confirm trade</div>
+
+@section Scripts{
+    <script src="~/Scripts/jquery-ui.min.js"></script>
+}
