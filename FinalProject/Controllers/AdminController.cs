@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using FinalProject.Models;
 using Microsoft.AspNet.Identity;
+using System.Threading.Tasks;
 
 namespace FinalProject.Controllers
 {
@@ -36,7 +37,7 @@ namespace FinalProject.Controllers
 
         [Authorize(Roles = "AppAdmin")]
         [HttpPost]
-        public ActionResult UsersInRole(String name, FormCollection Form) {
+        public async Task<ActionResult> UsersInRole(String name, FormCollection Form) {
             var store = new UserStore<ApplicationUser>(identityDb);
             var manager = new UserManager<ApplicationUser>(store);
 
@@ -45,13 +46,13 @@ namespace FinalProject.Controllers
             foreach (string usr in users) {
                 bool isChecked = Convert.ToBoolean(Form[usr].Split(',')[0]);
                 if (isChecked) {
-                    if (!manager.IsInRole(manager.Users.FirstOrDefault(u => u.UserName == usr).Id, name)) {
-                        manager.AddToRole(manager.Users.FirstOrDefault(u => u.UserName == usr).Id, name);
+                    if (!await manager.IsInRoleAsync(manager.Users.FirstOrDefault(u => u.UserName == usr).Id, name)) {
+                       await manager.AddToRoleAsync(manager.Users.FirstOrDefault(u => u.UserName == usr).Id, name);
                     }
                 }
                 else {
-                    if (!manager.IsInRole(manager.Users.FirstOrDefault(u => u.UserName == usr).Id, name)) {
-                        manager.RemoveFromRole(manager.Users.FirstOrDefault(u => u.UserName == usr).Id, name);
+                    if (await manager.IsInRoleAsync(manager.Users.FirstOrDefault(u => u.UserName == usr).Id, name)) {
+                        await manager.RemoveFromRoleAsync(manager.Users.FirstOrDefault(u => u.UserName == usr).Id, name);
                     }
                 }
             }
