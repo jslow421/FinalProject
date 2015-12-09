@@ -165,6 +165,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TicketManagerController.cs" />
+    <Compile Include="DataContests\IdentityMigrations\Configuration.cs" />
     <Compile Include="DataContexts\ExchangeDb.cs" />
     <Compile Include="DataContexts\IdentityDb.cs" />
     <Compile Include="DataContexts\IdentityMigrations\201512021855393_InitialCreate.cs" />

@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FinalProject.Models;
+using Microsoft.AspNet.Identity;
 
 namespace FinalProject.Controllers
 {
@@ -30,6 +32,30 @@ namespace FinalProject.Controllers
 
             ViewBag.Members = userMembers;
             return View(identityDb.Users.OrderBy(u => u.UserName));
+        }
+
+        [Authorize(Roles = "AppAdmin")]
+        [HttpPost]
+        public ActionResult UsersInRole(String name, FormCollection Form) {
+            var store = new UserStore<ApplicationUser>(identityDb);
+            var manager = new UserManager<ApplicationUser>(store);
+
+            string str = Form["UserNames"].ToString();
+            string[] users = str.Split(',');
+            foreach (string usr in users) {
+                bool isChecked = Convert.ToBoolean(Form[usr].Split(',')[0]);
+                if (isChecked) {
+                    if (!manager.IsInRole(manager.Users.FirstOrDefault(u => u.UserName == usr).Id, name)) {
+                        manager.AddToRole(manager.Users.FirstOrDefault(u => u.UserName == usr).Id, name);
+                    }
+                }
+                else {
+                    if (!manager.IsInRole(manager.Users.FirstOrDefault(u => u.UserName == usr).Id, name)) {
+                        manager.RemoveFromRole(manager.Users.FirstOrDefault(u => u.UserName == usr).Id, name);
+                    }
+                }
+            }
+            return RedirectToAction("Index");
         }
     }
 }
