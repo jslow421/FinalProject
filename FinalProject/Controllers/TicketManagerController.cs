@@ -20,7 +20,7 @@ namespace FinalProject.Controllers
         public ActionResult Index()
         {
             var username = User.Identity.Name;
-            var tickets = db.tickets.Where(t => t.user == username);
+            var tickets = db.tickets.Where(t => t.user == username).Include(t => t.category);
 
             return View(tickets);
         }

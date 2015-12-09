@@ -12,22 +12,22 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.eventName)
+            Event Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.location)
+            Location
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.date)
+            Date
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.time)
+            Time
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.tradeType)
+            Trade Type
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.user)
+            Category
         </th>
         <th></th>
     </tr>
@@ -50,7 +50,8 @@
             @Html.DisplayFor(modelItem => item.tradeType)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.user)
+            @item.category.name
+            
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ticketId }) |
