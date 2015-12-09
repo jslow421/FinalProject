@@ -19,7 +19,10 @@ namespace FinalProject.Controllers
         // GET: TicketManager
         public ActionResult Index()
         {
-            return View(db.tickets.ToList());
+            var username = User.Identity.Name;
+            var tickets = db.tickets.Where(t => t.user == username);
+
+            return View(tickets);
         }
 
         // GET: TicketManager/Details/5
