@@ -6,9 +6,17 @@ $(function () {
 
     $('#dialog').dialog({ autoOpen: false });
 
-    $('#tradeTicket').click(function () {
-        $("#confirmTrade").dialog("open");
+    $('#tradeButton').click(function () {
+        $("#dialog").dialog("open");
+        console.log($('#tradeTicket').val());
     });
 
+    $('#dialogCancel').click(function () {
+        $('#dialog').dialog("close");
+    });
 
+    $('#dialogConfirm').click(function () {
+        console.log("Submitting Form");
+        $('#trade').submit();
+    });
 });

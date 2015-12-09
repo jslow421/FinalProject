@@ -21,6 +21,9 @@
             @Html.DisplayNameFor(model => model.date)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.time)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.tradeType)
         </th>
         <th>
@@ -38,7 +41,10 @@
             @Html.DisplayFor(modelItem => item.location)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.date)
+            @item.date.ToString("M/d/yyyy")
+        </td>
+        <td>
+            @item.time.ToString("h:mm tt")
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.tradeType)
