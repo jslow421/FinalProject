@@ -32,9 +32,8 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - The Ticket Exchange</p>
-            @Html.ActionLink(".", "Index", "Admin")
+        <footer class="navbar navbar-default navbar-fixed-bottom">
+            <p>&copy; @DateTime.Now.Year - The Ticket Exchange @Html.ActionLink(".", "Index", "Admin")</p>
         </footer>
     </div>
 

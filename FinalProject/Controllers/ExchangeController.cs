@@ -30,7 +30,10 @@ namespace FinalProject.Controllers
         //GET: /Exchange/Details
         public ActionResult Details(int id) {
             var ticket = ticketDb.tickets.Find(id);
-
+            var user = User.Identity.Name;
+            bool status = String.IsNullOrEmpty(user) ? false : true;
+            
+            ViewBag.status = status;
             return View(ticket);
         }
 
@@ -53,7 +56,7 @@ namespace FinalProject.Controllers
             string userName = User.Identity.Name;
             var ticket = ticketDb.tickets.Find(id);
             var tradeId = form["tradeTicket"];
-            tradeId = tradeId.Substring(0, tradeId.IndexOf(','));
+            //tradeId = tradeId.Substring(0, tradeId.IndexOf(','));
             var ticket2 = ticketDb.tickets.Find(Convert.ToInt32(tradeId));
             //trades the tickets
             ticket2.user = ticket.user;

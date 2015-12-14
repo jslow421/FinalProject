@@ -44,3 +44,23 @@ h5{
     text-shadow: 3px 3px 3px #333;
 }
 
+footer p{
+    padding-top: 10px;
+    color: #999;
+    margin: 0;
+    text-align: center;
+}
+footer a{
+    color: #999;
+}
+.alert p{
+    color: #000;
+}
+.alert p a{
+    color: #000;
+}
+
+.alert-warning{
+    border-radius: 5px;
+}
+
