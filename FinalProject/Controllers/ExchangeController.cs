@@ -53,7 +53,7 @@ namespace FinalProject.Controllers
             string userName = User.Identity.Name;
             var ticket = ticketDb.tickets.Find(id);
             var tradeId = form["tradeTicket"];
-            tradeId = tradeId.Substring(0, tradeId.IndexOf(','));
+            //tradeId = tradeId.Substring(0, tradeId.IndexOf(','));
             var ticket2 = ticketDb.tickets.Find(Convert.ToInt32(tradeId));
             //trades the tickets
             ticket2.user = ticket.user;

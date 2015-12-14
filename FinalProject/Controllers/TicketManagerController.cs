@@ -122,14 +122,20 @@ namespace FinalProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ticketId,eventName,location,date,tradeType,user")] Ticket ticket)
+        public ActionResult Edit([Bind(Include = "ticketId,eventName,location,date,tradeType,user")] Ticket ticket, FormCollection form)
         {
+           
+
             if (ModelState.IsValid)
             {
+                ticket.time = Convert.ToDateTime(form["time"]);
+                ticket.user = User.Identity.Name;
+
                 db.Entry(ticket).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
             return View(ticket);
         }
 
