@@ -14,8 +14,24 @@
     <li>Trade Type: @Model.tradeType</li>
     <li>User: @Model.user</li>
 </ul>
-<form method="GET" id="ticket" name="ticket">
-    @Html.ActionLink("Trade", "Ticket", new { id = @Model.ticketId},new{ @class = "btn btn-danger" })
-</form>
+
+@{
+    if (@ViewBag.status)
+    {
+        <form method="GET" id="ticket" name="ticket">
+            @Html.ActionLink("Trade", "Ticket", new { id = @Model.ticketId }, new { @class = "btn btn-danger" })
+        </form>
+    }
+    else
+    {
+        
+    <div class="alert alert-warning" role="alert"><p><strong><a href="~/Account/Login">
+    Login</a></strong> or <strong><a href="~/Account/Register">register</a></strong> to trade tickets
+</p>
+    </div>
+
+    }
+}
+
 
 

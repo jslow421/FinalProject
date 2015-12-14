@@ -30,7 +30,10 @@ namespace FinalProject.Controllers
         //GET: /Exchange/Details
         public ActionResult Details(int id) {
             var ticket = ticketDb.tickets.Find(id);
-
+            var user = User.Identity.Name;
+            bool status = String.IsNullOrEmpty(user) ? false : true;
+            
+            ViewBag.status = status;
             return View(ticket);
         }
 
