@@ -185,6 +185,10 @@
     <Compile Include="DataContexts\TicketMigrations\201512072028211_Update1.Designer.cs">
       <DependentUpon>201512072028211_Update1.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataContexts\TicketMigrations\201512142042194_Update2.cs" />
+    <Compile Include="DataContexts\TicketMigrations\201512142042194_Update2.Designer.cs">
+      <DependentUpon>201512142042194_Update2.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataContexts\TicketMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -295,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataContexts\TicketMigrations\201512072028211_Update1.resx">
       <DependentUpon>201512072028211_Update1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\TicketMigrations\201512142042194_Update2.resx">
+      <DependentUpon>201512142042194_Update2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
