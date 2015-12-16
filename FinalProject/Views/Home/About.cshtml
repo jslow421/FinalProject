@@ -4,4 +4,33 @@
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<p>The Ticket Exchange is a site that facilitates simple exchanges of tickets to various events and shows. This service is provided free of charge to all of our users.</p>
+
+<div id="tabs">
+       <ul>
+        
+        <li><a href="#tabs-1">What is the Ticket Exchange?</a></li>
+        
+        <li><a href="#tabs-2">Who runs this?</a></li>
+        
+        <li><a href="#tabs-3">I want to give you guys money</a></li>
+        
+    </ul>
+        <div id="tabs-1">
+                <p>The Ticket Exchange is a site that facilitates simple exchanges of tickets to various events and shows. This service is provided free of charge to all of our users.</p>
+        
+    </div>
+        <div id="tabs-2">
+               <p>The Ticket Exchange is run by a group of students looking to change the world. One ticket at a time</p>
+        
+    </div>
+        <div id="tabs-3">
+                <p>Doesn't Everyone?</p>
+                <p>We accept wads of cash. Preferably unmarked bills, and we'd rather not know your name. Because reasons.</p>
+        
+    </div>
+    
+</div>
+
+@section Scripts{
+    <script src="~/Scripts/About.js"></script>
+}
