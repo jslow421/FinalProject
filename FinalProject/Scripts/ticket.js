@@ -3,6 +3,7 @@ $(function () {
     console.log("Ready");
 
     $('#date').datepicker();
+    $('#datetimepicker4').datetimepicker();
 
     $('#dialog').dialog({ autoOpen: false });
 
