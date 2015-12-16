@@ -36,19 +36,12 @@
         <div class="form-group">
             @Html.LabelFor(model => model.date, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.date, null, new { type = "date", required = "required", @Value= Model.date.ToString("M/d/yyyy"), @class = "form-control" })
+                @Html.TextBoxFor(model => model.date, null, new { type = "date", required = "required", id="date", @class = "form-control" })
                
                 @Html.ValidationMessageFor(model => model.date, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.time, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextBox("time", null, new { required = "required", @Value = Model.time.ToString("h:mm tt"), @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.time, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.tradeType, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -76,6 +69,7 @@
 </div>
 
 @section Scripts{
-    <script src="~/Scripts/jquery-ui.min.js"></script>
+    <script src="~/Scripts/moment.min.js"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.js"></script>
     <script src="~/Scripts/ticket.js"></script>
 }

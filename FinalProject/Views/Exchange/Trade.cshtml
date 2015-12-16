@@ -14,7 +14,6 @@
             <th>Event Name</th>
             <th>Location</th>
             <th>Date</th>
-            <th>Time</th>
             <th></th>
         </tr>
     </thead>
@@ -24,8 +23,7 @@
             <tr>
                 <td>@t.eventName</td>
                 <td>@t.location</td>
-                <td>@t.date.ToString("M/d/yyyy")</td> 
-                <td>@t.time.ToString("h:mm tt")</td>            
+                <td>@t.date.ToString("M/d/yyyy h:mm tt")</td> 
             </tr>
         }
     </tbody>

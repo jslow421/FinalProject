@@ -19,19 +19,19 @@ namespace FinalProject.DataContexts.TicketMigrations
         {
             var categories = new List<Category>
             {
-                new Category { name = "Football" },
-                new Category { name = "Hockey" },
-                new Category { name = "Basketball" },
-                new Category { name = "Concert" }
+                new Category { name = "Football", imageUrl = "~/Content/Img/football.png" },
+                new Category { name = "Hockey", imageUrl = "~/Content/Img/hockey.png" },
+                new Category { name = "Basketball", imageUrl = "~/Content/Img/basketball.png" },
+                new Category { name = "Concert", imageUrl = "~/Content/Img/Concert.png" }
             };
 
             DateTime date = new DateTime();
             context.tickets.AddOrUpdate(
                 t => t.eventName,
-                new Ticket { eventName = "Packer Game", date= DateTime.Now, time = date.AddHours(13).AddMinutes(30), location = "Lambaeu Field", category = categories.Single(c => c.name == "Football") },
-                new Ticket { eventName = "Admiral Game", date = DateTime.Now, time = date.AddHours(19).AddMinutes(10), location = "Bradley Center", category = categories.Single(c => c.name == "Hockey") },
-                new Ticket { eventName = "Bucks Game", date = DateTime.Now, time = date.AddHours(19).AddMinutes(30), location = "Bradley Center", category = categories.Single(c => c.name == "Basketball") },
-                new Ticket { eventName = "Some Singer", date = DateTime.Now, time = date.AddHours(20).AddMinutes(00), location = "Pabst Theater", category = categories.Single(c => c.name == "Concert") }
+                new Ticket { eventName = "Packer Game", date= DateTime.Now,  location = "Lambaeu Field", category = categories.Single(c => c.name == "Football") },
+                new Ticket { eventName = "Admiral Game", date = DateTime.Now,  location = "Bradley Center", category = categories.Single(c => c.name == "Hockey") },
+                new Ticket { eventName = "Bucks Game", date = DateTime.Now,  location = "Bradley Center", category = categories.Single(c => c.name == "Basketball") },
+                new Ticket { eventName = "Some Singer", date = DateTime.Now,  location = "Pabst Theater", category = categories.Single(c => c.name == "Concert") }
                 );
 
             context.SaveChanges();

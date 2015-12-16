@@ -63,7 +63,6 @@ namespace FinalProject.Controllers
             ticket.tradeType = form["tradeType"];
             ticket.user = User.Identity.Name;
             ticket.date = Convert.ToDateTime(form["date"]);
-            ticket.time = Convert.ToDateTime(form["time"]);
             string cat = form["categories"];
 
             ticket.category = (Category)db.categories.Single(s => s.name == cat);
@@ -128,7 +127,6 @@ namespace FinalProject.Controllers
 
             if (ModelState.IsValid)
             {
-                ticket.time = Convert.ToDateTime(form["time"]);
                 ticket.user = User.Identity.Name;
 
                 db.Entry(ticket).State = EntityState.Modified;

@@ -1,5 +1,9 @@
 ﻿@model IEnumerable<FinalProject.Models.Category>
 
+@helper ImageButton(string action, string imgUrl)
+{
+    <a href="Exchange/@action"><img src="~/Content/Img/@imgUrl" width="150px"/></a>
+}
 @{
     ViewBag.Title = "Index";
 }
@@ -9,6 +13,9 @@
 <ul id="linkList">
     @foreach(var cat in Model)
     {
-        <li><h5>@Html.ActionLink(cat.name, "Browse", new { category = cat.name })</h5></li>
+        <li>
+            @ImageButton("Browse?category=" + cat.name, cat.imageUrl)
+            <h5>@Html.ActionLink(cat.name, "Browse", new { category = cat.name })</h5></li>
     }
 </ul>
+

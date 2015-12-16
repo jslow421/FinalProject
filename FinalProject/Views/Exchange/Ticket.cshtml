@@ -13,7 +13,6 @@
                 <th>Event Name</th>
                 <th>Location</th>
                 <th>Date</th>
-                <th>Time</th>
                 <th></th>
             </tr>
         </thead>
@@ -23,8 +22,7 @@
                 <tr>
                     <td>@t.eventName</td>
                     <td>@t.location</td>
-                    <td>@t.date.ToString("M/d/yyyy")</td>
-                    <td>@t.time.ToString("h:mm tt")</td>
+                    <td>@t.date.ToString("M/d/yyyy h:mm tt")</td>
                     <td><input type="hidden" id="tradeTicket" name="tradeTicket" value="@t.ticketId" />
                     <button type="button" id="tradeButton" name="tradeButton" class="btn btn-success btn-sm">Select</button>
                 </tr>

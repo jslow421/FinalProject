@@ -32,21 +32,13 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.date, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class='col-sm-6'>
-                    <input type='date' class="form-control" id='datetimepicker4' />
-                </div>
+            <div class="col-md-10"> 
+            
                 @Html.TextBox("date", null, new { type = "date", required = "required", @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.date, "", new { @class = "text-danger" })
             </div>
         </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.time, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextBox("time", null, new { required = "required", @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.time, "", new { @class = "text-danger" })
-            </div>
-        </div>
+      
 
         <div class="form-group">
             @Html.LabelFor(model => model.tradeType, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -63,13 +55,13 @@
        <div class="form=group">
            @Html.LabelFor(model => model.category, htmlAttributes: new { @class = "control-label col-md-2" })
            <div class="col-md-10">
-              @Html.DropDownList("categories", (IEnumerable<SelectListItem>)ViewBag.categories, "categories", new { @class = "form-control" })
+              @Html.DropDownList("categories", (IEnumerable<SelectListItem>)ViewBag.categories, null, new { @class = "form-control" })
            </div>
        </div>
-
+        <br/>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="button" id="create" name="create" value="Create" class="btn btn-default" />
+                <input type="submit" id="create" name="create" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
@@ -81,5 +73,7 @@
 </div>
 
 @section Scripts{
+    <script src="~/Scripts/moment.min.js"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.js"></script>
     <script src="~/Scripts/ticket.js"></script>
 }

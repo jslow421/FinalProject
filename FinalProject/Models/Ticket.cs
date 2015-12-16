@@ -19,7 +19,6 @@ namespace FinalProject.Models
         public string location { get; set; }
         [Required(ErrorMessage = "A date is required")]
         public DateTime date { get; set; }
-        public DateTime time { get; set; }
         [Required(ErrorMessage = "You must have a trade type")]
         public string tradeType { get; set; }
         public string user { get; set; }

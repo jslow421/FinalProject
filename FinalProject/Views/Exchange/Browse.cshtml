@@ -12,7 +12,6 @@
             <td>Event</td>
             <td>Location</td>
             <td>Date</td>
-            <td>Time</td>
             <td>Category</td>
         </tr>
     </thead>
@@ -22,8 +21,7 @@
             <tr>
                 <td>@ticket.eventName</td>
                 <td>@ticket.location</td>
-                <td>@ticket.date.ToString("M/d/yyyy")</td>
-                <td>@ticket.time.ToString("h:mm tt")</td>
+                <td>@ticket.date.ToString("M/d/yyyy h:mm tt")</td>
                 <td>@ticket.category.name</td>
                 <td>@Html.ActionLink("View", "Details", new { id = ticket.ticketId }, new { @class = "btn btn-success btn-sm" })</td>
             </tr>

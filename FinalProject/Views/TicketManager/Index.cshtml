@@ -21,9 +21,6 @@
             Date
         </th>
         <th>
-            Time
-        </th>
-        <th>
             Trade Type
         </th>
         <th>
@@ -41,11 +38,9 @@
             @Html.DisplayFor(modelItem => item.location)
         </td>
         <td>
-            @item.date.ToString("M/d/yyyy")
+            @item.date.ToString("M/d/yyyy h:mm tt")
         </td>
-        <td>
-            @item.time.ToString("h:mm tt")
-        </td>
+       
         <td>
             @Html.DisplayFor(modelItem => item.tradeType)
         </td>
