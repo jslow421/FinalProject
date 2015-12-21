@@ -28,10 +28,10 @@ namespace FinalProject.DataContexts.TicketMigrations
             DateTime date = new DateTime();
             context.tickets.AddOrUpdate(
                 t => t.eventName,
-                new Ticket { eventName = "Packer Game", date= DateTime.Now,  location = "Lambaeu Field", category = categories.Single(c => c.name == "Football") },
-                new Ticket { eventName = "Admiral Game", date = DateTime.Now,  location = "Bradley Center", category = categories.Single(c => c.name == "Hockey") },
-                new Ticket { eventName = "Bucks Game", date = DateTime.Now,  location = "Bradley Center", category = categories.Single(c => c.name == "Basketball") },
-                new Ticket { eventName = "Some Singer", date = DateTime.Now,  location = "Pabst Theater", category = categories.Single(c => c.name == "Concert") }
+                new Ticket { eventName = "Packer Game", date= DateTime.Now,  location = "Lambaeu Field", category = categories.Single(c => c.name == "Football"), user="mvcmanager@gmail.com" },
+                new Ticket { eventName = "Admiral Game", date = DateTime.Now,  location = "Bradley Center", category = categories.Single(c => c.name == "Hockey"), user="cust@isp.com" },
+                new Ticket { eventName = "Bucks Game", date = DateTime.Now, location = "Bradley Center", category = categories.Single(c => c.name == "Basketball"), user = "cust@isp.com" },
+                new Ticket { eventName = "Some Singer", date = DateTime.Now, location = "Pabst Theater", category = categories.Single(c => c.name == "Concert"), user = "cust@isp.com" }
                 );
 
             context.SaveChanges();

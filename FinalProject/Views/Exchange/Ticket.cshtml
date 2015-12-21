@@ -5,7 +5,7 @@
 }
 
 <h2>Trade Options</h2>
-<p>Choose a ticket you would like to trade for: @ViewBag.ticket.eventName on @ViewBag.Ticket.date.ToString("M/d/yyyy") at @ViewBag.Ticket.time.ToString("h:mm tt")</p>
+<p>Choose a ticket you would like to trade for: @ViewBag.ticket.eventName on @ViewBag.Ticket.date.ToString("M/d/yyyy h:mm tt") </p>
 <form method="POST" action="/Exchange/Trade/@ViewBag.ticket.ticketId" id="trade" name="trade">
     <table class="table table-striped">
         <thead>
@@ -37,6 +37,8 @@
 </div>
 </form>
 @section Scripts{
+<script src="~/Scripts/moment.min.js"></script>
+<script src="~/Scripts/bootstrap-datetimepicker.js"></script>
     <script src="~/Scripts/jquery-ui.min.js"></script>
     <script src="~/Scripts/ticket.js"></script>
 }
