@@ -6,11 +6,17 @@ $(function () {
 
     $('#dialog').dialog({ autoOpen: false });
 
-    $('#tradeButton').click(function () {
+    $('#tradeTable').on('click', '.tradeButton', function () {
+        $("#dialog").dialog("open");
+        console.log($(this.id));
+        console.log($('#tradeTicket').val(this.id));
+    });
+
+  /*  $('.tradeButton').click(function () {
         $("#dialog").dialog("open");
         console.log($('#tradeTicket').val());
     });
-
+    */
     $('#dialogCancel').click(function () {
         $('#dialog').dialog("close");
     });

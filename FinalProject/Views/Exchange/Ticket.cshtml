@@ -16,20 +16,20 @@
                 <th></th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="tradeTable">
             @foreach (var t in Model)
             {
                 <tr>
                     <td>@t.eventName</td>
                     <td>@t.location</td>
                     <td>@t.date.ToString("M/d/yyyy h:mm tt")</td>
-                    <td><input type="hidden" id="tradeTicket" name="tradeTicket" value="@t.ticketId" />
-                    <button type="button" id="tradeButton" name="tradeButton" class="btn btn-success btn-sm">Select</button>
+                    <td>
+                    <button type="button" id="@t.ticketId" name="tradeButton" class="btn btn-success btn-sm tradeButton">Select</button>
                 </tr>
             }
         </tbody>
     </table>
-
+    <input type="hidden" id="tradeTicket" name="tradeTicket" value="" />
     <div id="dialog" title="Confirm Trade"><p>Are you sure you want to make this trade?</p>
  
         <input type="button" id="dialogConfirm" style="margin-right: 10px" value="Confirm" class="btn btn-danger" />
